@@ -3,15 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExcelMedia</title>
+    <title>ExcelMedia — Custom Web Development</title>
     <meta name="description" content="ExcelMedia — Custom-coded websites built from scratch.">
-    <meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#3b82f6">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23050509'/%3E%3Ctext x='16' y='22' font-family='Inter,system-ui,sans-serif' font-size='18' font-weight='800' fill='white' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ExcelMedia — Portfolio">
+    <meta property="og:description" content="Custom-coded websites built from scratch. View our work.">
+    <meta property="og:url" content="https://excelmedia.net">
+    <meta name="twitter:card" content="summary">
+    <style>html{overflow:hidden!important;scrollbar-width:none}html::-webkit-scrollbar{display:none}html.allow-scroll{overflow-y:auto!important;overflow-x:hidden!important}</style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <noscript><style>.loader{display:none!important}.logo,main,.email{opacity:1!important}html{overflow-y:auto!important}</style></noscript>
 </head>
 <body>
+
+    <div class="loader" id="loader">
+        <div class="loader-logo">EXCEL<span>MEDIA</span></div>
+        <div class="loader-bar"></div>
+    </div>
 
     <div class="glow glow-1"></div>
     <div class="glow glow-2"></div>
@@ -22,11 +36,12 @@
     <div class="logo">EXCEL<span>MEDIA</span></div>
 
     <main>
-        <p class="tagline">Websites we've built</p>
+        <p class="tagline">Our Work</p>
         <div class="cards">
-            <a href="https://instincttweaks.com" target="_blank" rel="noopener" class="card">
+            <div class="card-wrap">
+            <a href="https://instincttweaks.com" target="_blank" rel="noopener noreferrer" class="card">
                 <div class="card-preview">
-                    <iframe src="https://instincttweaks.com" loading="lazy" tabindex="-1"></iframe>
+                    <iframe src="https://instincttweaks.com" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" aria-label="Instinct Tweaks website preview"></iframe>
                     <div class="card-preview-fade"></div>
                 </div>
                 <div class="card-label">
@@ -35,9 +50,11 @@
                     <p class="card-url">instincttweaks.com</p>
                 </div>
             </a>
-            <a href="https://vikagency.net" target="_blank" rel="noopener" class="card">
+            </div>
+            <div class="card-wrap">
+            <a href="https://vikagency.net" target="_blank" rel="noopener noreferrer" class="card">
                 <div class="card-preview">
-                    <iframe src="https://vikagency.net" loading="lazy" tabindex="-1"></iframe>
+                    <iframe src="https://vikagency.net" loading="lazy" tabindex="-1" sandbox="allow-scripts allow-same-origin" aria-label="Vik Agency website preview"></iframe>
                     <div class="card-preview-fade"></div>
                 </div>
                 <div class="card-label">
@@ -46,9 +63,11 @@
                     <p class="card-url">vikagency.net</p>
                 </div>
             </a>
-            <a href="https://nordichighlandestate.com/" target="_blank" rel="noopener" class="card">
-                <div class="card-preview">
-                    <iframe src="https://nordichighlandestate.com/" loading="lazy" tabindex="-1"></iframe>
+            </div>
+            <div class="card-wrap">
+            <a href="https://nordichighlandestate.com/" target="_blank" rel="noopener noreferrer" class="card">
+                <div class="card-preview card-preview-img">
+                    <img src="https://nordichighlandestate.com/assets/Better%20pictures/Bilde_Av_HytttaOgSj%C3%B8en.png" alt="Nordic Highland Estate" loading="lazy">
                     <div class="card-preview-fade"></div>
                 </div>
                 <div class="card-label">
@@ -57,10 +76,26 @@
                     <p class="card-url">nordichighlandestate.com</p>
                 </div>
             </a>
+            </div>
         </div>
     </main>
 
-    <div class="email"><a href="mailto:contact@excelmedia.co.uk">contact@excelmedia.co.uk</a></div>
+    <div class="email">
+        <p class="email-cta">Let’s build yours</p>
+        <a href="mailto:contact@excelmedia.co.uk">contact@excelmedia.co.uk</a>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').classList.add('done');
+                document.body.classList.add('loaded');
+                setTimeout(function() {
+                    document.documentElement.classList.add('allow-scroll');
+                }, 800);
+            }, 1500);
+        });
+    </script>
 
 </body>
 </html>
