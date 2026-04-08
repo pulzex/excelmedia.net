@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Conversion Analyzer - ExcelMedia</title>
+    <meta name="description" content="Get a free AI-powered conversion audit of your website. Find what's killing your sales and get ready-to-use copy that converts.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Your website is losing you money. Let's find out why.">
+    <meta property="og:description" content="Get a free AI-powered conversion audit. Find what's killing your sales and get ready-to-use copy that converts.">
+    <meta property="og:url" content="https://excelmedia.net/analyzer/">
+    <meta property="og:image" content="https://excelmedia.net/analyzer/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Your website is losing you money. Let's find out why.">
+    <meta name="twitter:description" content="Get a free AI-powered conversion audit. Find what's killing your sales.">
+    <meta name="twitter:image" content="https://excelmedia.net/analyzer/og-image.png">
+    <link rel="canonical" href="https://excelmedia.net/analyzer/">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="en">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Grid Overlay -->
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="../" class="nav-logo">
+            <img src="logo.png" alt="ExcelMedia" class="nav-logo-img">
+            <span>ExcelMedia <span class="logo-accent">Analyzer</span></span>
+        </a>
+        <div class="nav-right">
+            <span class="uses-badge" id="usesBadge">1 free analysis</span>
+            <button class="btn-nav-login" id="navLoginBtn" style="display:none">Log In</button>
+            <span class="nav-user" id="navUser" style="display:none"></span>
+            <a href="#" class="nav-link-muted" id="navPricingBtn">Pricing</a>
+            <a href="https://excelmedia.co.uk" class="nav-link-muted" target="_blank" rel="noopener noreferrer">excelmedia.co.uk →</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-badge hero-fade">
+                <span class="hero-badge-dot"></span>
+                Free AI-Powered Audit
+            </div>
+            <h1 class="hero-title hero-fade">Your website is <span class="hero-title-italic">losing</span> you money.<br><span class="hero-title-bold">Let's find out why.</span></h1>
+            <p class="hero-sub hero-fade">Answer 6 quick questions. Our AI analyzes your site against a proven conversion framework and gives you a score, problems found, and ready-to-use copy in under 60 seconds.</p>
+            <button class="btn btn-primary hero-fade" id="startBtn">Analyze My Website →</button>
+        </div>
+    </section>
+
+    <!-- Multi-Step Form -->
+    <section class="form-section" id="formSection">
+        <div class="container">
+            <div class="form-card">
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="step-indicator" id="stepIndicator">Step 1 of 6</div>
+
+                <!-- Step 1 -->
+                <div class="form-step active" data-step="1">
+                    <h2 class="step-title">What's your biggest issue?</h2>
+                    <p class="step-desc">Pick the one that hurts the most.</p>
+                    <div class="option-grid">
+                        <button class="option-btn" data-value="Low conversions - people visit but don't buy">
+                            <span class="option-icon">📉</span>
+                            <span class="option-label">Low conversions</span>
+                            <span class="option-detail">People visit but don't buy</span>
+                        </button>
+                        <button class="option-btn" data-value="Bad design - looks outdated or unprofessional">
+                            <span class="option-icon">🎨</span>
+                            <span class="option-label">Bad design</span>
+                            <span class="option-detail">Looks outdated or cheap</span>
+                        </button>
+                        <button class="option-btn" data-value="Weak branding - no clear message or identity">
+                            <span class="option-icon">🏷️</span>
+                            <span class="option-label">Weak branding</span>
+                            <span class="option-detail">No clear message or identity</span>
+                        </button>
+                        <button class="option-btn" data-value="Not sure - I just know it's not working">
+                            <span class="option-icon">🤷</span>
+                            <span class="option-label">Not sure</span>
+                            <span class="option-detail">I just know it's not working</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="form-step" data-step="2">
+                    <h2 class="step-title">What's your main goal?</h2>
+                    <p class="step-desc">What should your website do for you?</p>
+                    <div class="option-grid">
+                        <button class="option-btn" data-value="More sales - I sell products/services online">
+                            <span class="option-icon">💰</span>
+                            <span class="option-label">More sales</span>
+                            <span class="option-detail">Sell products or services</span>
+                        </button>
+                        <button class="option-btn" data-value="More leads - I need people to enquire or book">
+                            <span class="option-icon">📋</span>
+                            <span class="option-label">More leads</span>
+                            <span class="option-detail">Get enquiries or bookings</span>
+                        </button>
+                        <button class="option-btn" data-value="More sign-ups - I need users to create accounts">
+                            <span class="option-icon">📧</span>
+                            <span class="option-label">More sign-ups</span>
+                            <span class="option-detail">Grow user base or email list</span>
+                        </button>
+                        <button class="option-btn" data-value="Brand awareness - I want to look credible and professional">
+                            <span class="option-icon">🏆</span>
+                            <span class="option-label">Brand awareness</span>
+                            <span class="option-detail">Look credible and professional</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="form-step" data-step="3">
+                    <h2 class="step-title">Who is your target audience?</h2>
+                    <p class="step-desc">Be specific. The more detail, the better the analysis.</p>
+                    <textarea class="form-textarea" id="audience" placeholder="e.g. Small business owners aged 25-45 who need affordable web design, gym owners looking for marketing help, gamers who want custom setups..." rows="4"></textarea>
+                    <button class="btn btn-primary step-next-btn" id="step3Next">Continue →</button>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="form-step" data-step="4">
+                    <h2 class="step-title">What do you sell & price range?</h2>
+                    <p class="step-desc">Helps us understand your offer positioning.</p>
+                    <textarea class="form-textarea" id="product" placeholder="e.g. Web design services starting at $500, monthly SEO packages $200-$800/mo, custom gaming peripherals $50-$300..." rows="4"></textarea>
+                    <button class="btn btn-primary step-next-btn" id="step4Next">Continue →</button>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="form-step" data-step="5">
+                    <h2 class="step-title">Paste your website URL</h2>
+                    <p class="step-desc">We'll pull the content and analyze it.</p>
+                    <input type="url" class="form-input" id="websiteUrl" placeholder="https://yourwebsite.com">
+                    <button class="btn btn-primary step-next-btn" id="step5Next">Continue →</button>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="form-step" data-step="6">
+                    <h2 class="step-title">What do you think isn't working? <span class="optional-tag">Optional</span></h2>
+                    <p class="step-desc">Any gut feelings or specific concerns?</p>
+                    <textarea class="form-textarea" id="notWorking" placeholder="e.g. I think my headline is boring, people leave after seeing the pricing, the homepage feels cluttered..." rows="4"></textarea>
+                    <button class="btn btn-primary step-next-btn" id="submitBtn">🔍 Analyze My Website</button>
+                </div>
+
+                <!-- Back Button -->
+                <button class="back-btn" id="backBtn" style="display:none">← Back</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading State -->
+    <section class="loading-section" id="loadingSection">
+        <div class="container">
+            <div class="loading-card">
+                <div class="loading-spinner"></div>
+                <h2 class="loading-title">Analyzing your website...</h2>
+                <div class="loading-steps">
+                    <div class="loading-step active" id="ls1">
+                        <span class="loading-step-icon">○</span> Fetching website content
+                    </div>
+                    <div class="loading-step" id="ls2">
+                        <span class="loading-step-icon">○</span> Identifying weak points
+                    </div>
+                    <div class="loading-step" id="ls3">
+                        <span class="loading-step-icon">○</span> Applying conversion framework
+                    </div>
+                    <div class="loading-step" id="ls4">
+                        <span class="loading-step-icon">○</span> Generating your redesign
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="results-section" id="resultsSection">
+
+        <!-- Preview Hero - first thing shown -->
+        <div class="preview-hero" id="previewHero">
+            <div class="preview-topbar">
+                <div class="preview-topbar-left">
+                    <h2 class="preview-title">Your Website, Improved</h2>
+                    <div class="preview-toggle">
+                        <button class="preview-toggle-btn active" id="toggleImproved">Improved</button>
+                        <button class="preview-toggle-btn" id="toggleOriginal">Original</button>
+                    </div>
+                </div>
+                <button class="preview-fullscreen-btn" id="fullscreenBtn" title="Fullscreen">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Fullscreen</span>
+                </button>
+            </div>
+
+            <div class="preview-split">
+                <!-- Left: iframe -->
+                <div class="preview-frame-wrap">
+                    <div class="preview-loading" id="previewLoading">
+                        <div class="preview-spinner"></div>
+                        <span>Loading preview...</span>
+                    </div>
+                    <iframe id="previewFrame" class="preview-frame" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" title="Website preview"></iframe>
+                </div>
+
+                <!-- Right: changes panel -->
+                <div class="preview-panel" id="previewPanel">
+                    <div class="preview-panel-header">Changes Made</div>
+                    <div class="preview-panel-list" id="previewChangesList">
+                        <!-- Dynamically filled -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fullscreen overlay -->
+        <div class="fullscreen-overlay" id="fullscreenOverlay">
+            <div class="fullscreen-topbar">
+                <div class="fullscreen-topbar-left">
+                    <button class="fullscreen-back-btn" id="fullscreenCloseBtn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 2L4 8l6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <span>Back</span>
+                    </button>
+                    <div class="preview-toggle">
+                        <button class="preview-toggle-btn active" id="fsToggleImproved">New</button>
+                        <button class="preview-toggle-btn" id="fsToggleOriginal">Old</button>
+                    </div>
+                    <span class="fullscreen-label" id="fsLabel">Viewing: New version</span>
+                </div>
+            </div>
+            <iframe id="fullscreenFrame" class="fullscreen-frame" sandbox="allow-same-origin allow-scripts allow-forms allow-popups" title="Fullscreen preview"></iframe>
+        </div>
+
+        <div class="container">
+
+            <!-- Score Grid -->
+            <div class="scores-grid" id="scoresGrid">
+                <div class="score-card score-card-main" id="scoreBlock">
+                    <div class="score-ring-wrap">
+                        <svg class="score-ring" viewBox="0 0 120 120">
+                            <circle class="score-ring-bg" cx="60" cy="60" r="52" />
+                            <circle class="score-ring-fill" cx="60" cy="60" r="52" id="scoreRing" />
+                        </svg>
+                        <div class="score-number" id="scoreNumber">0</div>
+                    </div>
+                    <div class="score-card-label">Overall</div>
+                    <p class="score-verdict" id="scoreVerdict"></p>
+                </div>
+                <div class="score-card" id="scoreConversion">
+                    <div class="score-card-number" id="conversionScore">0</div>
+                    <div class="score-card-label">Conversion</div>
+                    <div class="score-card-bar"><div class="score-card-fill" id="conversionFill"></div></div>
+                </div>
+                <div class="score-card" id="scoreCopy">
+                    <div class="score-card-number" id="copyScore">0</div>
+                    <div class="score-card-label">Copy</div>
+                    <div class="score-card-bar"><div class="score-card-fill" id="copyFill"></div></div>
+                </div>
+                <div class="score-card" id="scoreDesign">
+                    <div class="score-card-number" id="designScore">0</div>
+                    <div class="score-card-label">Design</div>
+                    <div class="score-card-bar"><div class="score-card-fill" id="designFill"></div></div>
+                </div>
+                <div class="score-card" id="scoreCta">
+                    <div class="score-card-number" id="ctaScore">0</div>
+                    <div class="score-card-label">CTA Strength</div>
+                    <div class="score-card-bar"><div class="score-card-fill" id="ctaFill"></div></div>
+                </div>
+                <div class="score-card" id="scoreSeo">
+                    <div class="score-card-number" id="seoScore">0</div>
+                    <div class="score-card-label">SEO</div>
+                    <div class="score-card-bar"><div class="score-card-fill" id="seoFill"></div></div>
+                </div>
+            </div>
+
+            <!-- Problems Found -->
+            <div class="result-block" id="problemsBlock">
+                <h3 class="result-heading">Problems Found</h3>
+                <div class="problems-list" id="problemsList"></div>
+            </div>
+
+            <!-- Why It Works -->
+            <div class="result-block" id="whyBlock">
+                <h3 class="result-heading">Why These Changes Work</h3>
+                <p class="why-text" id="whyText"></p>
+            </div>
+
+            <!-- Sticky CTA -->
+            <div class="result-cta-section">
+                <div class="result-cta-left">
+                    <h3 class="result-cta-title">Want us to build this for you?</h3>
+                    <p class="result-cta-desc">Our team designs and develops high-converting websites. Real design, real code, real results.</p>
+                </div>
+                <div class="result-cta-actions">
+                    <a href="https://excelmedia.co.uk" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Talk to Our Team</a>
+                    <button class="btn btn-secondary" id="analyzeAgainBtn">Analyze Another Site</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Paywall / Pricing -->
+    <section class="paywall-section" id="paywallSection">
+        <div class="container container-wide">
+            <div class="paywall-header">
+                <div class="hero-badge"><span class="hero-badge-dot"></span> Your free analysis is used</div>
+                <h2 class="paywall-title">Unlock unlimited conversion audits</h2>
+                <p class="paywall-sub">Every credit gives you a full AI-powered conversion audit with actionable improvements you can use right away.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Starter -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Starter</h3>
+                        <div class="pricing-price">$29<span class="pricing-period">/mo</span></div>
+                        <div class="pricing-cost-per">$1.45 per credit</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>20 credits per month</li>
+                        <li>Full conversion audit</li>
+                        <li>Ready-to-use copy</li>
+                        <li>Before/after comparisons</li>
+                    </ul>
+                    <button class="btn btn-secondary pricing-btn" data-plan="starter">Get Starter →</button>
+                </div>
+
+                <!-- Pro -->
+                <div class="pricing-card pricing-card-popular">
+                    <div class="pricing-popular-tag">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Pro</h3>
+                        <div class="pricing-price">$79<span class="pricing-period">/mo</span></div>
+                        <div class="pricing-cost-per">$1.05 per credit</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>75 credits per month</li>
+                        <li>Full conversion audit</li>
+                        <li>Ready-to-use copy</li>
+                        <li>Before/after comparisons</li>
+                        <li>Priority processing</li>
+                    </ul>
+                    <button class="btn btn-primary pricing-btn" data-plan="pro">Get Pro →</button>
+                </div>
+
+                <!-- Agency -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Agency</h3>
+                        <div class="pricing-price">$149<span class="pricing-period">/mo</span></div>
+                        <div class="pricing-cost-per">$0.75 per credit</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>200 credits per month</li>
+                        <li>Full conversion audit</li>
+                        <li>Ready-to-use copy</li>
+                        <li>Before/after comparisons</li>
+                        <li>Priority processing</li>
+                        <li>Team-friendly</li>
+                    </ul>
+                    <button class="btn btn-secondary pricing-btn" data-plan="agency">Get Agency →</button>
+                </div>
+            </div>
+
+            <p class="pricing-guarantee">Secure checkout via Stripe. Cancel anytime.</p>
+
+            <!-- Login for existing subscribers -->
+            <div class="paywall-login">
+                <p>Already subscribed? <button class="link-btn" id="paywallLoginBtn">Log in with your email →</button></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-card">
+            <button class="modal-close" id="loginModalClose">✕</button>
+            <h3 class="modal-title">Log in to your account</h3>
+            <p class="modal-desc">Enter the email you used to subscribe.</p>
+            <input type="email" class="form-input" id="loginEmail" placeholder="you@example.com">
+            <button class="btn btn-primary modal-btn" id="loginSubmitBtn">Verify Subscription →</button>
+            <div class="modal-error" id="loginError"></div>
+        </div>
+    </div>
+
+    <!-- Success Toast (after Stripe checkout) -->
+    <div class="toast" id="successToast">
+        <div class="toast-icon">✓</div>
+        <div class="toast-content">
+            <div class="toast-title">Subscription Active!</div>
+            <div class="toast-desc" id="toastDesc">Welcome aboard. You can start analyzing now.</div>
+        </div>
+        <button class="toast-close" id="toastClose">✕</button>
+    </div>
+
+    <!-- Error Toast -->
+    <div class="toast toast-error" id="errorToast">
+        <div class="toast-icon">!</div>
+        <div class="toast-content">
+            <div class="toast-title" id="errorToastTitle">Something went wrong</div>
+            <div class="toast-desc" id="errorToastDesc"></div>
+        </div>
+        <button class="toast-close" id="errorToastClose">✕</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="analyzer-footer">
+        <p>© 2026 ExcelMedia. <a href="https://excelmedia.co.uk" target="_blank" rel="noopener noreferrer">excelmedia.co.uk</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
