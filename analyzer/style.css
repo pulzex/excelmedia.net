@@ -356,7 +356,6 @@ button, input, textarea, select { font-family: inherit; }
     border-radius: var(--radius-lg);
     padding: 36px;
     margin-bottom: 20px;
-    animation: fadeIn 0.5s ease;
 }
 .result-heading {
     font-size: 18px; font-weight: 600;
@@ -811,6 +810,11 @@ button, input, textarea, select { font-family: inherit; }
 .result-block:nth-child(6) { animation-delay: 0.5s; }
 @keyframes resultAppear {
     to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* === FOOTER === */
